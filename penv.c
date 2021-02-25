@@ -1,6 +1,5 @@
 /* ********************* *
  * TP0 INF3173 H2021
- * Code permanent: NAHH85090004
  * Nom: Hussein
  * Prénom: Nahle
  * ********************* *
