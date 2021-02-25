@@ -68,25 +68,6 @@ load test_helper
 	kill $pchild
 }
 
-@test "child envvar n'existe pas" {
-	# bats
-	# \- sh (!HELLO)
-	#    \- sleep (HELLO=MONDE)
-	sh -c "env HELLO=MONDE sleep 10" &
-	pchild=`pgrep -s 0 sleep`
-
-	run ./penv $! HELLO
-	check 1 ""
-
-	run ./penv $pchild HELLO
-	check 0 "MONDE"
-
-	run ./penv -p $pchild HELLO
-	check 1 ""
-
-	kill $pchild
-}
-
 @test "child n'existe pas" {
 	run ./penv -p 1234567890 "HOME"
 
