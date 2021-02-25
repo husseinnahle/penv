@@ -3,7 +3,7 @@ name: test check.bats
 on:
   push:
     branches:
-      - tp3
+      - main
     tags:
       - v1     
 jobs:
