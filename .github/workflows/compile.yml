@@ -9,10 +9,13 @@ on:
 jobs:
   job_1:
     name: Compilation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:18.04
     timeout-minutes: 5
     steps:
     - uses: actions/checkout@v2
     - name: compilation
       run: |
+        apt-get update && apt-get install -y time bats build-essential linux-tools-generic
+        apt-cache search perf
         make
+   
